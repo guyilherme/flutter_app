@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
+
   Home({Key key}) : super(key: key);
 
   _HomeState createState() => _HomeState();
+
+  String tittle() {
+    return "Home";
+  }
 }
 
 class _HomeState extends State<Home> {
@@ -15,10 +20,7 @@ class _HomeState extends State<Home> {
             Text(
               'Hello World',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.blueAccent,
-                decoration: TextDecoration.none
-              ),
+              style: Theme.of(context).textTheme.display2
             )
           ],
         );

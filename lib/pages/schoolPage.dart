@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class SchoolPage extends StatefulWidget {
+
   SchoolPage({Key key}) : super(key: key);
 
   _SchoolPageState createState() => _SchoolPageState();
+
+  String tittle() {
+    return "School";
+  }
 }
 
 class _SchoolPageState extends State<SchoolPage> {

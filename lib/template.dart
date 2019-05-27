@@ -22,7 +22,11 @@ class _TemplateState extends State<Template> {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: Text('Início'),
+        title: new Center(
+          child: Text(
+            _pages[_selectedPages].tittle()
+          ),
+        ),
         backgroundColor: Colors.deepPurple,
       ),
       body: _body(),
