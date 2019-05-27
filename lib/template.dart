@@ -11,7 +11,7 @@ class Template extends StatefulWidget {
 class _TemplateState extends State<Template> {
   var homePage = new Home();
   var schoolPage = new SchoolPage();
-  var _selectedPages = 1;
+  var _selectedPages = 0;
   var _pages;
 
   @override
@@ -38,6 +38,12 @@ class _TemplateState extends State<Template> {
           )
         ],
         fixedColor: Colors.black,
+        currentIndex: _selectedPages,
+        onTap: (int index){
+          setState(() {
+           _selectedPages = index; 
+          });
+        },
       ),
     );
   }
