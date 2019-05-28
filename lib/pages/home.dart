@@ -12,6 +12,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _cursos = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +23,23 @@ class _HomeState extends State<Home> {
               'Hello World',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.display2
-            )
+            ),
+            Text(
+              'Você completou $_cursos',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.display1.copyWith(
+                fontSize: 20,
+                fontWeight: FontWeight.w300
+              )
+            ),
+            FloatingActionButton(
+              child: Icon(Icons.add),
+                onPressed: () {
+                  setState(() {
+                    _cursos++; 
+                  });
+                },
+              ),
           ],
         );
   }
