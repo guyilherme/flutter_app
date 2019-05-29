@@ -13,13 +13,22 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _cursos = 0;
+  int _selectedImage = 0;
+  var _images = [
+    'assets/images/1.png',
+    'assets/images/2.png',
+    'assets/images/3.png',
+    'assets/images/4.png',
+    'assets/images/5.png',
+    'assets/images/6.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('assets/images/1.png', height: 100.0,),
+            Image.asset(_images[_selectedImage], height: 100.0,),
             Text(
               'Hello World',
               textAlign: TextAlign.center,
@@ -39,7 +48,14 @@ class _HomeState extends State<Home> {
               child: Icon(Icons.add),
                 onPressed: () {
                   setState(() {
-                    _cursos++; 
+                    _cursos++;
+                    
+                    int selectedImage = _cursos ~/ 2;
+                    if (selectedImage <= 4) {
+                      _selectedImage = selectedImage;
+                    } else if (selectedImage > 4) {
+                      _selectedImage = 5;
+                    }
                   });
                 },
               ),
