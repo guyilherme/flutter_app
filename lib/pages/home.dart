@@ -19,20 +19,23 @@ class _HomeState extends State<Home> {
     return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset('assets/images/1.png', height: 100.0,),
             Text(
               'Hello World',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.display2
             ),
             Text(
-              'Você completou $_cursos',
+              'Você pressionou $_cursos vezes o botão',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.display1.copyWith(
                 fontSize: 20,
                 fontWeight: FontWeight.w300
               )
             ),
-            FloatingActionButton(
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: FloatingActionButton(
               child: Icon(Icons.add),
                 onPressed: () {
                   setState(() {
@@ -40,6 +43,7 @@ class _HomeState extends State<Home> {
                   });
                 },
               ),
+            ),
           ],
         );
   }
